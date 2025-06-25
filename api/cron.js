@@ -1,9 +1,9 @@
 // api/cron.js
 export default async function handler(req, res) {
   // Only GETs allowed
-  if (req.method !== "GET") {
-    return res.status(405).send("Method Not Allowed");
-  }
+  // if (req.method !== "GET") {
+  //   return res.status(405).send("Method Not Allowed");
+  // }
 
   try {
     // --- your “every-5-min” logic here ---

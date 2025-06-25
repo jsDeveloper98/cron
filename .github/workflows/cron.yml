@@ -11,6 +11,7 @@ jobs:
       - name: Invoke cron function
         run: |
           curl -fsS \
-             https://my-vercel-cron-czsf5ilhf-jsdeveloper98s-projects.vercel.app/api/cron \
+            -H "Authorization: Bearer s3cr3t-T0k3n-4V3ryL0ngR4nd0m" \
+            https://my-vercel-cron-czsf5ilhf-jsdeveloper98s-projects.vercel.app/api/cron \
             --retry 3 \
             --retry-delay 5
