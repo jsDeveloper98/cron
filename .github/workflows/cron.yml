@@ -10,6 +10,6 @@ jobs:
       - name: Invoke cron function
         run: |
           curl -fsS \
-             https://my-vercel-cron-ol3xc3tv3-jsdeveloper98s-projects.vercel.app/api/cron \
+             https://my-vercel-cron-8kfrrgjh5-jsdeveloper98s-projects.vercel.app/api/cron \
             --retry 3 \
             --retry-delay 5
