@@ -1,0 +1,15 @@
+name: "Trigger Vercel Cron"
+on:
+  schedule:
+    - cron: "*/5 * * * *" # every 5 minutes
+
+jobs:
+  ping-cron-endpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invoke cron function
+        run: |
+          curl -fsS \
+             https://my-vercel-cron-ol3xc3tv3-jsdeveloper98s-projects.vercel.app/api/cron \
+            --retry 3 \
+            --retry-delay 5
