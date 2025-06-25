@@ -1,0 +1,14 @@
+name: ❄️ Check TLS Slots
+
+on:
+  schedule:
+    - cron: "*/5 * * * *" # every 5 minutes
+
+jobs:
+  ping-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping TLS bot
+        run: |
+          curl -s https://my-vercel-cron-czsf5ilhf-jsdeveloper98s-projects.vercel.app/api/cron \
+            --fail --show-error
