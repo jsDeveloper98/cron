@@ -1,7 +1,12 @@
 // api/cron.js
 export default async function handler(req, res) {
   // Your “every-5-min” logic goes here.
-  console.log("Cron ran at", new Date().toISOString());
+  console.log("Cron ran at zzzz", new Date().toISOString());
+
+  if (req.method !== "GET") {
+    return res.status(405).send("Method Not Allowed");
+  }
+
   // e.g., fetch some API, update a database, etc.
 
   // api/index.js
@@ -51,6 +56,4 @@ export default async function handler(req, res) {
         </html>
       `);
   }
-
-  res.status(200).json({ success: true });
 }
