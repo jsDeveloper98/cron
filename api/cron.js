@@ -4,5 +4,53 @@ export default async function handler(req, res) {
   console.log("Cron ran at", new Date().toISOString());
   // e.g., fetch some API, update a database, etc.
 
+  // api/index.js
+  // Only handle GET requests to the site root
+  if (req.method === "GET") {
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.status(200).send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <title>Welcome</title>
+          <style>
+            body { 
+              margin:0; 
+              height:100vh; 
+              display:flex; 
+              align-items:center; 
+              justify-content:center; 
+              font-family:sans-serif;
+              background:#f5f5f5;
+            }
+            .welcome-box {
+              padding:2rem;
+              background:white;
+              border-radius:8px;
+              box-shadow:0 2px 8px rgba(0,0,0,0.1);
+              text-align:center;
+            }
+            .welcome-box h1 {
+              margin:0 0 1rem;
+              font-size:1.5rem;
+            }
+            .welcome-box p {
+              margin:0;
+              color:#555;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="welcome-box">
+            <h1>👋 Welcome!</h1>
+            <p>This endpoint runs your scheduler every 5 minutes.</p>
+          </div>
+        </body>
+        </html>
+      `);
+  }
+
   res.status(200).json({ success: true });
 }
