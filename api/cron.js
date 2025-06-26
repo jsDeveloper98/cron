@@ -1,3 +1,5 @@
+import main from "../src";
+
 // api/cron.js
 export default async function handler(req, res) {
   // Only GETs allowed
@@ -9,6 +11,8 @@ export default async function handler(req, res) {
     // --- your “every-5-min” logic here ---
     console.log("Cron ran at", new Date().toISOString());
     // e.g. await doSomeWork();
+
+    main();
     // ----------------------------------------
 
     return res.status(200).json({ success: true });
