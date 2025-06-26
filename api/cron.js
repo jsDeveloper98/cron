@@ -12,10 +12,7 @@ export default async function handler(req, res) {
     console.log("Cron ran at", new Date().toISOString());
     // e.g. await doSomeWork();
 
-    main();
-    // ----------------------------------------
-
-    return res.status(200).json({ success: true });
+    main(res);
   } catch (err) {
     console.error("Cron error:", err);
     return res

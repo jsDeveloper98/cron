@@ -54,7 +54,7 @@ function validateConfig() {
   }
 }
 
-async function main() {
+async function main(res) {
   try {
     logger.info("TLS Germany Visa Booking Bot Starting...");
     logger.info(
@@ -76,6 +76,8 @@ async function main() {
     // const args = process.argv.slice(2);
 
     await scheduler.runOnce();
+
+    return res.status(200).json({ success: true });
 
     // if (args.includes("--once")) {
     //   // Run once and exit
