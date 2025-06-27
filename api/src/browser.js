@@ -102,30 +102,30 @@ class BrowserManager {
     }
   }
 
-  // async tryAlternativeLaunch() {
-  //   try {
-  //     logger.info("Trying alternative browser launch method...");
+  async tryAlternativeLaunch() {
+    try {
+      logger.info("Trying alternative browser launch method...");
 
-  //     // Minimal launch options
-  //     this.browser = await puppeteer.launch({
-  //       headless: false, // Force non-headless for debugging
-  //       args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  //       timeout: 60000,
-  //     });
+      // Minimal launch options
+      this.browser = await puppeteer.launch({
+        headless: false, // Force non-headless for debugging
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        timeout: 60000,
+      });
 
-  //     this.page = await this.browser.newPage();
-  //     await this.page.goto("https://www.google.com", {
-  //       waitUntil: "domcontentloaded",
-  //       timeout: 30000,
-  //     });
+      this.page = await this.browser.newPage();
+      await this.page.goto("https://www.google.com", {
+        waitUntil: "domcontentloaded",
+        timeout: 30000,
+      });
 
-  //     logger.info("Alternative browser launch successful");
-  //     return true;
-  //   } catch (error) {
-  //     logger.error("Alternative browser launch also failed:", error);
-  //     return false;
-  //   }
-  // }
+      logger.info("Alternative browser launch successful");
+      return true;
+    } catch (error) {
+      logger.error("Alternative browser launch also failed:", error);
+      return false;
+    }
+  }
 
   async close() {
     try {
