@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Invoke cron function
         run: |
-          curl -v -sS https://my-vercel-cron-c10n4g4ob-jsdeveloper98s-projects.vercel.app/api/cron
+          curl -v -sS https://my-vercel-cron-li6s75ewz-jsdeveloper98s-projects.vercel.app/api/cron

@@ -4,7 +4,7 @@ const logger = require("./logger");
 const path = require("path");
 const chromium = require("chrome-aws-lambda");
 const puppeteerCore = require("puppeteer-core");
-const puppeteer = require("puppeteer");
+// const puppeteer = require("puppeteer");
 
 // Importing Puppeteer core as default otherwise
 // it won't function correctly with "launch()"
@@ -69,7 +69,15 @@ class BrowserManager {
 
       console.log("hasavvvvvvvv");
 
-      this.browser = await puppeteer.launch(launchOptions);
+      this.browser = await puppeteerCore.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
+      });
+
+      // this.browser = await puppeteer.launch(launchOptions);
 
       this.page = await this.browser.newPage();
 
