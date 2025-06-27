@@ -74,7 +74,6 @@ class BrowserManager {
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath(),
         headless: chromium.headless,
-        ignoreHTTPSErrors: true,
       });
 
       // this.browser = await puppeteer.launch(launchOptions);
