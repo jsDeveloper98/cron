@@ -81,6 +81,8 @@ class BrowserManager {
 
       this.page = await this.browser.newPage();
 
+      console.log("hasav4772347742");
+
       // Enable JavaScript if it was disabled
       await this.page.setJavaScriptEnabled(true);
 
