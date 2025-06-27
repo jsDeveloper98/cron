@@ -22,3 +22,5 @@ module.exports = async function handler(req, res) {
       .json({ success: false, message: "Internal Server Error" });
   }
 };
+
+// test();
