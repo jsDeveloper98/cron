@@ -3,7 +3,8 @@ const config = require("./config");
 const logger = require("./logger");
 const path = require("path");
 const chromium = require("chrome-aws-lambda");
-const puppeteer = require("puppeteer-core");
+const puppeteerCore = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 
 // Importing Puppeteer core as default otherwise
 // it won't function correctly with "launch()"
@@ -54,8 +55,7 @@ class BrowserManager {
           try {
             const fs = require("fs");
             if (fs.existsSync(chromePath)) {
-              launchOptions.executablePath =
-                (await chromium.executablePath) || chromePath;
+              launchOptions.executablePath = chromePath;
               logger.info(`Using Chrome at: ${chromePath}`);
               break;
             }
@@ -69,13 +69,7 @@ class BrowserManager {
 
       console.log("hasavvvvvvvv");
 
-      this.browser = await puppeteer.launch({
-        ...launchOptions,
-        args: chromium.args,
-        headless: false,
-      });
-
-      // this.browser = await puppeteer.launch(launchOptions);
+      this.browser = await puppeteer.launch(launchOptions);
 
       this.page = await this.browser.newPage();
 
@@ -117,30 +111,41 @@ class BrowserManager {
     }
   }
 
-  // async tryAlternativeLaunch() {
-  //   try {
-  //     logger.info("Trying alternative browser launch method...");
+  async tryAlternativeLaunch() {
+    this.browser = await puppeteerCore.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+      ignoreHTTPSErrors: true,
+    });
 
-  //     // Minimal launch options
-  //     this.browser = await puppeteer.launch({
-  //       headless: false, // Force non-headless for debugging
-  //       args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  //       timeout: 60000,
-  //     });
+    this.page = await this.browser.newPage();
 
-  //     this.page = await this.browser.newPage();
-  //     await this.page.goto("https://www.google.com", {
-  //       waitUntil: "domcontentloaded",
-  //       timeout: 30000,
-  //     });
+    // Enable JavaScript if it was disabled
+    await this.page.setJavaScriptEnabled(true);
 
-  //     logger.info("Alternative browser launch successful");
-  //     return true;
-  //   } catch (error) {
-  //     logger.error("Alternative browser launch also failed:", error);
-  //     return false;
-  //   }
-  // }
+    // Set viewport and user agent
+    await this.page.setViewport({ width: 1366, height: 768 });
+    await this.page.setUserAgent(
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    );
+
+    // Set extra headers
+    await this.page.setExtraHTTPHeaders({
+      "Accept-Language": "en-US,en;q=0.9",
+      Accept:
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    });
+
+    // Test browser by navigating to a simple page
+    await this.page.goto("https://www.google.com", {
+      waitUntil: "networkidle2",
+      timeout: 30000,
+    });
+
+    logger.info("Browser launched and tested successfully");
+  }
 
   async close() {
     try {
