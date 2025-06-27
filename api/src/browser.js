@@ -2,7 +2,7 @@
 const config = require("./config");
 const logger = require("./logger");
 const path = require("path");
-const chromium = require("chrome-aws-lambda");
+const chromium = require("@sparticuz/chromium");
 const puppeteerCore = require("puppeteer-core");
 // const puppeteer = require("puppeteer");
 
@@ -69,7 +69,7 @@ class BrowserManager {
 
       console.log("hasavvvvvvvv");
 
-      this.browser = await puppeteerCore.launch({
+      this.browser = await puppeteer.launch({
         args: chromium.args,
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath,
