@@ -71,9 +71,9 @@ class BrowserManager {
 
       this.browser = await puppeteerCore.launch({
         args: chromium.args,
-        // defaultViewport: chromium.defaultViewport,
+        defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath(),
-        headless: false,
+        headless: chromium.headless,
         ignoreHTTPSErrors: true,
       });
 
