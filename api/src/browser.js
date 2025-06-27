@@ -69,11 +69,11 @@ class BrowserManager {
 
       console.log("hasavvvvvvvv");
 
-      this.browser = await puppeteer.launch({
+      this.browser = await puppeteerCore.launch({
         args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
+        // defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath(),
-        headless: chromium.headless,
+        headless: false,
         ignoreHTTPSErrors: true,
       });
 
@@ -115,7 +115,7 @@ class BrowserManager {
       });
 
       // Try alternative launch method
-      return await this.tryAlternativeLaunch();
+      // return await this.tryAlternativeLaunch();
     }
   }
 
