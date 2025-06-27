@@ -1,11 +1,13 @@
 const main = require("./src/index.js");
 
 // api/cron.js
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Only GETs allowed
   // if (req.method !== "GET") {
   //   return res.status(405).send("Method Not Allowed");
   // }
+
+  console.log("sfjdsgfdsgfsdfggsdfgsdfg");
 
   try {
     // --- your “every-5-min” logic here ---
@@ -19,4 +21,4 @@ export default async function handler(req, res) {
       .status(500)
       .json({ success: false, message: "Internal Server Error" });
   }
-}
+};

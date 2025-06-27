@@ -1,0 +1,70 @@
+{"level":"info","message":"Email notifications disabled - missing or default configuration","service":"tls-visa-bot","timestamp":"2025-06-27T16:09:42.735Z"}
+{"level":"info","message":"Email transporter configured successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:11:29.816Z"}
+{"level":"info","message":"Email transporter configured successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:12:02.965Z"}
+{"level":"info","message":"Email transporter configured successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:12:32.955Z"}
+{"level":"info","message":"Email transporter configured successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:16:10.061Z"}
+{"level":"info","message":"Email transporter configured successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:15.586Z"}
+{"level":"info","message":"TLS Germany Visa Booking Bot Starting...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:15.590Z"}
+{"level":"info","message":"Configuration: yerevan - tourist","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:15.591Z"}
+{"level":"info","message":"Email transporter configured successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.480Z"}
+{"level":"info","message":"TLS Germany Visa Booking Bot Starting...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.484Z"}
+{"level":"info","message":"Configuration: yerevan - tourist","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.485Z"}
+{"level":"info","message":"Running bot once...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.485Z"}
+{"level":"info","message":"Starting TLS Visa Bot for GERMANY visa...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.485Z"}
+{"level":"info","message":"Target: germany tourist visa in yerevan","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.485Z"}
+{"level":"info","message":"Attempting to launch browser...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.485Z"}
+{"level":"info","message":"Using Chrome at: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.485Z"}
+{"level":"info","message":"Launch options:","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:39.485Z"}
+{"level":"info","message":"Browser launched and tested successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:41.677Z"}
+{"level":"info","message":"Attempting to login to TLS Armenia...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:41.679Z"}
+{"level":"info","message":"Looking for email input field...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:47.736Z"}
+{"level":"info","message":"Trying email selector: #email-input-field","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:47.736Z"}
+{"level":"info","message":"✅ Found email field with selector: #email-input-field","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:47.748Z"}
+{"level":"info","message":"Looking for password field...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:47.749Z"}
+{"level":"info","message":"Trying password selector: #password-input-field","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:47.749Z"}
+{"level":"info","message":"✅ Found password field with selector: #password-input-field","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:47.752Z"}
+{"level":"info","message":"Filling email field...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:47.752Z"}
+{"level":"info","message":"Filling password field...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:50.577Z"}
+{"level":"info","message":"Looking for submit button...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:52.147Z"}
+{"level":"info","message":"Trying submit selector: #btn-login","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:52.148Z"}
+{"level":"info","message":"✅ Found submit button: #btn-login","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:52.155Z"}
+{"level":"info","message":"Submitting login form...","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:52.155Z"}
+{"level":"info","message":"After login submission, current URL: https://visas-de.tlscontact.com/en-us/travel-groups","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:54.167Z"}
+{"level":"info","message":"✅ Login successful!","service":"tls-visa-bot","timestamp":"2025-06-27T16:17:54.167Z"}
+{"level":"info","message":"No more months available to check","service":"tls-visa-bot","timestamp":"2025-06-27T16:18:02.340Z"}
+{"level":"info","message":"📢 NOTIFICATION: Bot Error ❌ - No appointments available","service":"tls-visa-bot","timestamp":"2025-06-27T16:18:02.341Z"}
+{"level":"info","message":"Email notification sent successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:18:04.520Z"}
+{"level":"info","message":"Browser closed successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:18:04.586Z"}
+{"level":"info","message":"Email transporter configured successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.074Z"}
+{"level":"info","message":"TLS Germany Visa Booking Bot Starting...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.081Z"}
+{"level":"info","message":"Configuration: yerevan - tourist","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.081Z"}
+{"level":"info","message":"Running bot once...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.081Z"}
+{"level":"info","message":"Starting TLS Visa Bot for GERMANY visa...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.082Z"}
+{"level":"info","message":"Target: germany tourist visa in yerevan","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.082Z"}
+{"level":"info","message":"Attempting to launch browser...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.082Z"}
+{"level":"info","message":"Using Chrome at: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.082Z"}
+{"level":"info","message":"Launch options:","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:00.082Z"}
+{"level":"info","message":"Browser launched and tested successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:01.958Z"}
+{"level":"info","message":"Attempting to login to TLS Armenia...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:01.960Z"}
+{"level":"info","message":"Looking for email input field...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:07.060Z"}
+{"level":"info","message":"Trying email selector: #email-input-field","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:07.061Z"}
+{"level":"info","message":"✅ Found email field with selector: #email-input-field","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:07.070Z"}
+{"level":"info","message":"Looking for password field...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:07.070Z"}
+{"level":"info","message":"Trying password selector: #password-input-field","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:07.070Z"}
+{"level":"info","message":"✅ Found password field with selector: #password-input-field","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:07.072Z"}
+{"level":"info","message":"Filling email field...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:07.072Z"}
+{"level":"info","message":"Filling password field...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:09.882Z"}
+{"level":"info","message":"Looking for submit button...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:11.447Z"}
+{"level":"info","message":"Trying submit selector: #btn-login","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:11.448Z"}
+{"level":"info","message":"✅ Found submit button: #btn-login","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:11.454Z"}
+{"level":"info","message":"Submitting login form...","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:11.454Z"}
+{"level":"info","message":"After login submission, current URL: https://visas-de.tlscontact.com/en-us/travel-groups","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:13.467Z"}
+{"level":"info","message":"✅ Login successful!","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:13.468Z"}
+{"level":"info","message":"Screenshot saved: /Users/hovhannesboyakhchyan/Desktop/projects/my-vercel-cron/api/screenshots/login-successful-page-1751041333468.png","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:13.587Z"}
+{"level":"info","message":"Screenshot saved: /Users/hovhannesboyakhchyan/Desktop/projects/my-vercel-cron/api/screenshots/booking-page-loaded-1751041337404.png","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:17.596Z"}
+{"level":"info","message":"Screenshot saved: /Users/hovhannesboyakhchyan/Desktop/projects/my-vercel-cron/api/screenshots/month-check-1-1751041339620.png","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:19.809Z"}
+{"level":"info","message":"Screenshot saved: /Users/hovhannesboyakhchyan/Desktop/projects/my-vercel-cron/api/screenshots/month-check-2-1751041341822.png","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:22.013Z"}
+{"level":"info","message":"No more months available to check","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:22.018Z"}
+{"level":"info","message":"📢 NOTIFICATION: Bot Error ❌ - No appointments available","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:22.018Z"}
+{"level":"info","message":"Email notification sent successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:24.154Z"}
+{"level":"info","message":"Browser closed successfully","service":"tls-visa-bot","timestamp":"2025-06-27T16:22:24.240Z"}

@@ -65,7 +65,7 @@ class TLSBot {
           await this.browser.page.waitForTimeout(2000);
 
           // Take screenshot for debugging
-          // await this.browser.takeScreenshot(`month-check-${this.count}`);
+          await this.browser.takeScreenshot(`month-check-${this.count}`);
 
           // Recursively call this function
           return await this.tst();
@@ -320,7 +320,7 @@ class TLSBot {
 
         // const element = await this.browser.page.$("#book-appointment-btn");
 
-        // await this.browser.takeScreenshot("login-successful-page");
+        await this.browser.takeScreenshot("login-successful-page");
 
         const bookingUrl =
           "https://visas-de.tlscontact.com/en-us/3242808/workflow/appointment-booking?location=amEVN2de";
@@ -336,7 +336,7 @@ class TLSBot {
 
         // console.log("clicked book appointment button");
 
-        // await this.browser.takeScreenshot("booking-page-loaded");
+        await this.browser.takeScreenshot("booking-page-loaded");
 
         await this.tst();
       } else {

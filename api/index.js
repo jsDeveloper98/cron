@@ -1,5 +1,5 @@
 // api/index.js
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   // Only GETs allowed
   if (req.method !== "GET") {
     return res.status(405).send("Method Not Allowed");
@@ -29,4 +29,4 @@ export default function handler(req, res) {
     <p>This endpoint runs your scheduler every 5 minutes.</p>
   </div>
 </body></html>`);
-}
+};
