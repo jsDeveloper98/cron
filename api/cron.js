@@ -1,4 +1,4 @@
-import main from "../src/index.js";
+const main = require("./src/index.js");
 
 // api/cron.js
 export default async function handler(req, res) {
