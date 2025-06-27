@@ -67,6 +67,8 @@ class BrowserManager {
 
       logger.info("Launch options:", JSON.stringify(launchOptions, null, 2));
 
+      console.log("hasavvvvvvvv");
+
       this.browser = await puppeteer.launch({
         ...launchOptions,
         args: chromium.args,
