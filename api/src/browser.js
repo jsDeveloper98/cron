@@ -2,7 +2,6 @@
 const config = require("./config");
 const logger = require("./logger");
 const path = require("path");
-const chromium = require("@sparticuz/chromium");
 const puppeteerCore = require("puppeteer-core");
 // const puppeteer = require("puppeteer");
 
@@ -21,7 +20,7 @@ class BrowserManager {
       logger.info("Attempting to launch browser...");
 
       // Try different browser launch configurations for macOS
-      const launchOptions = {
+      let launchOptions = {
         headless: config.bot.headless ? "new" : false,
         args: [
           "--no-sandbox",
@@ -69,14 +68,24 @@ class BrowserManager {
 
       console.log("hasavvvvvvvv");
 
-      this.browser = await puppeteerCore.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath(),
-        headless: chromium.headless,
-      });
+      let chrome = {};
+      let puppeteer;
 
-      // this.browser = await puppeteer.launch(launchOptions);
+      if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
+        puppeteer = require("puppeteer-core");
+        chrome = require("chrome-aws-lambda");
+        launchOptions = {
+          args: [...chromium.args, "--disable-web-security"],
+          defaultViewport: chromium.defaultViewport,
+          executablePath: await chromium.executablePath,
+          headless: true,
+          ignoreHTTPSErrors: true,
+        };
+      } else {
+        puppeteer = require("puppeteer");
+      }
+
+      this.browser = await puppeteer.launch(launchOptions);
 
       this.page = await this.browser.newPage();
 
