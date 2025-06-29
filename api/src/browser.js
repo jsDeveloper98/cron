@@ -2,7 +2,6 @@
 const config = require("./config");
 const logger = require("./logger");
 const path = require("path");
-const puppeteerCore = require("puppeteer-core");
 // const puppeteer = require("puppeteer");
 
 // Importing Puppeteer core as default otherwise
@@ -73,11 +72,14 @@ class BrowserManager {
 
       if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
         puppeteer = require("puppeteer-core");
-        chrome = require("chrome-aws-lambda");
+        chrome = require("@sparticuz/chromium");
+        const executablePath = await chrome.executablePath(
+          '"https://github.com/Sparticuz/chromium/releases/download/v133.0.0/chromium-v133.0.0-pack.tar"'
+        );
         launchOptions = {
+          executablePath,
           args: [...chromium.args, "--disable-web-security"],
           defaultViewport: chromium.defaultViewport,
-          executablePath: await chromium.executablePath,
           headless: true,
           ignoreHTTPSErrors: true,
         };
