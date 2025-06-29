@@ -73,11 +73,11 @@ class TLSBot {
           return await this.tst();
         } else {
           logger.info("No more months available to check");
-          await notifier.notify("error", `No appointments available`, {
-            monthsChecked: this.count,
-            country: config.tls.country,
-            visaType: config.tls.visaType,
-          });
+          // await notifier.notify("error", `No appointments available`, {
+          //   monthsChecked: this.count,
+          //   country: config.tls.country,
+          //   visaType: config.tls.visaType,
+          // });
           return false;
         }
       } else {
