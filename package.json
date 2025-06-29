@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sparticuz/chromium": "^133.0.0",
+    "@sparticuz/chromium-min": "^133.0.0",
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "moment": "^2.29.4",
@@ -19,15 +19,12 @@
     "node-schedule": "^2.1.1",
     "nodemailer": "^6.9.7",
     "nodemon": "^3.0.2",
-    "puppeteer-core": "^6.0.0",
+    "puppeteer-core": "^23.10.4",
     "winston": "^3.11.0",
     "wrangler": "^4.21.0"
   },
   "devDependencies": {
-    "puppeteer": "^24.11.1",
+    "puppeteer": "^23.10.4",
     "typescript": "^5.8.3"
-  },
-  "engines": {
-    "node": "^18.0.0 || ^20.0.0"
   }
 }
