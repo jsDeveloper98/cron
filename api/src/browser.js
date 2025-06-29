@@ -70,7 +70,7 @@ class BrowserManager {
       let chrome = {};
       let puppeteer;
 
-      if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
+      if (true) {
         puppeteer = require("puppeteer-core");
         chrome = require("@sparticuz/chromium-min");
         const executablePath = await chrome.executablePath(
