@@ -78,8 +78,8 @@ class BrowserManager {
         );
         launchOptions = {
           executablePath,
-          args: [...chromium.args, "--disable-web-security"],
-          defaultViewport: chromium.defaultViewport,
+          args: [...chrome.args, "--disable-web-security"],
+          defaultViewport: chrome.defaultViewport,
           headless: true,
           ignoreHTTPSErrors: true,
         };
