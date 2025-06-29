@@ -106,7 +106,6 @@ class TLSBot {
     try {
       logger.info("Attempting to login to TLS Armenia...");
 
-      // Use the exact login URL you provided
       const loginUrl = `https://visas-de.tlscontact.com/en-us/country/am/vac/amEVN2de`;
 
       await this.browser.page.goto(loginUrl, {
@@ -114,13 +113,8 @@ class TLSBot {
         timeout: 30000,
       });
 
-      // Wait for page to fully load
-      // await this.page.waitForNavigation({ timeout: 2000 });
       await setTimeout(2000);
 
-      // await this.browser.page.waitForTimeout(2000);
-
-      // Take screenshot to see what we're working with
       // await this.browser.takeScreenshot("initial-page-loaded");
 
       const [loginButton] = await this.browser.page.$$(
@@ -129,12 +123,7 @@ class TLSBot {
 
       loginButton.click({ count: 1 });
 
-      // await this.browser.page.waitForTimeout(1000);
       await setTimeout(1000);
-
-      // await this.page.waitForNavigation({ timeout: 1000 });
-
-      // await this.browser.takeScreenshot("login-page-loaded");
 
       logger.info("Looking for email input field...");
 
@@ -202,13 +191,11 @@ class TLSBot {
       logger.info("Filling email field...");
       await emailField.click({ clickCount: 3 });
       await emailField.type(config.user.email, { delay: 100 });
-      // await this.browser.page.waitForTimeout(200);
       await setTimeout(200);
 
       logger.info("Filling password field...");
       await passwordField.click({ clickCount: 3 });
       await passwordField.type(config.user.password, { delay: 100 });
-      // await this.browser.page.waitForTimeout(200);
       await setTimeout(200);
 
       // await this.browser.takeScreenshot("login-fields-filled");
@@ -265,9 +252,7 @@ class TLSBot {
       logger.info("Submitting login form...");
       await submitButton.click();
 
-      // await this.browser.page.waitForTimeout(2000);
       await setTimeout(2000);
-
       // await this.browser.takeScreenshot("after-login-submit");
 
       const currentUrl = this.browser.page.url();
@@ -343,7 +328,6 @@ class TLSBot {
 
         // await element.click({ count: 1 });
 
-        // await this.browser.page.waitForTimeout(2000);
         await setTimeout(2000);
 
         // console.log("clicked book appointment button");
@@ -390,7 +374,6 @@ class TLSBot {
     try {
       logger.info("Navigating to German visa booking page...");
 
-      // Take screenshot of current page after login
       // await this.browser.takeScreenshot("after-successful-login");
 
       // Look for Germany visa booking options
@@ -432,7 +415,6 @@ class TLSBot {
       }
 
       if (!foundGermanyLink) {
-        // Try to find country selection dropdown
         const countrySelectors = [
           "#country",
           "select[name='country']",
@@ -462,7 +444,6 @@ class TLSBot {
         );
       }
 
-      // await this.browser.page.waitForTimeout(3000);
       await setTimeout(3000);
       // await this.browser.takeScreenshot("germany-selection");
 
@@ -479,11 +460,8 @@ class TLSBot {
       logger.info("Checking for available German visa appointment slots...");
 
       // await this.browser.takeScreenshot("appointment-page");
-
-      // await this.browser.page.waitForTimeout(2000);
       await setTimeout(2000);
 
-      // Wait for calendar to load
       if (
         !(await this.browser.waitForSelector(
           ".calendar, .appointment-calendar, .date-picker",
@@ -494,11 +472,9 @@ class TLSBot {
         return [];
       }
 
-      // Look for available dates
       const availableSlots = await this.browser.page.evaluate(() => {
         const slots = [];
 
-        // Common selectors for available dates
         const availableDates = document.querySelectorAll(
           ".available-date, .date-available, .calendar-day:not(.disabled):not(.unavailable), .appointment-slot, .bookable-date"
         );
@@ -543,12 +519,10 @@ class TLSBot {
         throw new Error("Not logged in");
       }
 
-      // Navigate to German visa booking page
       if (!(await this.navigateToGermanVisaBooking())) {
         throw new Error("Failed to navigate to German visa booking page");
       }
 
-      // Check for available slots
       const availableSlots = await this.checkAvailableSlots();
 
       if (availableSlots.length > 0) {
@@ -581,7 +555,8 @@ class TLSBot {
       logger.info(
         `Retrying German visa booking... Attempt ${this.retryCount}/${config.bot.maxRetries}`
       );
-      await this.browser.page.waitForTimeout(5000);
+      // await this.browser.page.waitForTimeout(5000);
+      await setTimeout(5000);
       return await this.checkAndBookAppointment();
     }
     return false;
