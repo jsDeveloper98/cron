@@ -3,6 +3,7 @@ const config = require("./config");
 const logger = require("./logger");
 const notifier = require("./notifier");
 const moment = require("moment");
+const { setTimeout } = require("timers/promises");
 
 class TLSBot {
   constructor() {
@@ -40,8 +41,8 @@ class TLSBot {
   async tst() {
     try {
       // Check if "no appointments available" text exists - Fixed XPath syntax
-      const notAvailableDaysText = await this.browser.page.$x(
-        '//p[contains(., "We currently don’t have any appointment slots available.")]'
+      const notAvailableDaysText = await this.browser.page.$$(
+        'xpath/.//p[contains(., "We currently don’t have any appointment slots available.")]'
       );
 
       if (notAvailableDaysText) {
@@ -62,10 +63,11 @@ class TLSBot {
           this.count += 1;
 
           // Wait for page to load
-          await this.browser.page.waitForTimeout(2000);
+          // await this.browser.page.waitForTimeout(2000);
+          await setTimeout(2000);
 
           // Take screenshot for debugging
-          await this.browser.takeScreenshot(`month-check-${this.count}`);
+          // await this.browser.takeScreenshot(`month-check-${this.count}`);
 
           // Recursively call this function
           return await this.tst();
@@ -113,18 +115,24 @@ class TLSBot {
       });
 
       // Wait for page to fully load
-      await this.browser.page.waitForTimeout(2000);
+      // await this.page.waitForNavigation({ timeout: 2000 });
+      await setTimeout(2000);
+
+      // await this.browser.page.waitForTimeout(2000);
 
       // Take screenshot to see what we're working with
       // await this.browser.takeScreenshot("initial-page-loaded");
 
-      const [loginButton] = await this.browser.page.$x(
-        "//span[contains(., 'LOGIN')]"
+      const [loginButton] = await this.browser.page.$$(
+        "xpath/.//span[contains(., 'LOGIN')]"
       );
 
       loginButton.click({ count: 1 });
 
-      await this.browser.page.waitForTimeout(1000);
+      // await this.browser.page.waitForTimeout(1000);
+      await setTimeout(1000);
+
+      // await this.page.waitForNavigation({ timeout: 1000 });
 
       // await this.browser.takeScreenshot("login-page-loaded");
 
@@ -194,12 +202,14 @@ class TLSBot {
       logger.info("Filling email field...");
       await emailField.click({ clickCount: 3 });
       await emailField.type(config.user.email, { delay: 100 });
-      await this.browser.page.waitForTimeout(200);
+      // await this.browser.page.waitForTimeout(200);
+      await setTimeout(200);
 
       logger.info("Filling password field...");
       await passwordField.click({ clickCount: 3 });
       await passwordField.type(config.user.password, { delay: 100 });
-      await this.browser.page.waitForTimeout(200);
+      // await this.browser.page.waitForTimeout(200);
+      await setTimeout(200);
 
       // await this.browser.takeScreenshot("login-fields-filled");
 
@@ -255,7 +265,8 @@ class TLSBot {
       logger.info("Submitting login form...");
       await submitButton.click();
 
-      await this.browser.page.waitForTimeout(2000);
+      // await this.browser.page.waitForTimeout(2000);
+      await setTimeout(2000);
 
       // await this.browser.takeScreenshot("after-login-submit");
 
@@ -320,7 +331,7 @@ class TLSBot {
 
         // const element = await this.browser.page.$("#book-appointment-btn");
 
-        await this.browser.takeScreenshot("login-successful-page");
+        // await this.browser.takeScreenshot("login-successful-page");
 
         const bookingUrl =
           "https://visas-de.tlscontact.com/en-us/3242808/workflow/appointment-booking?location=amEVN2de";
@@ -332,11 +343,12 @@ class TLSBot {
 
         // await element.click({ count: 1 });
 
-        await this.browser.page.waitForTimeout(2000);
+        // await this.browser.page.waitForTimeout(2000);
+        await setTimeout(2000);
 
         // console.log("clicked book appointment button");
 
-        await this.browser.takeScreenshot("booking-page-loaded");
+        // await this.browser.takeScreenshot("booking-page-loaded");
 
         await this.tst();
       } else {
@@ -450,7 +462,8 @@ class TLSBot {
         );
       }
 
-      await this.browser.page.waitForTimeout(3000);
+      // await this.browser.page.waitForTimeout(3000);
+      await setTimeout(3000);
       // await this.browser.takeScreenshot("germany-selection");
 
       return true;
@@ -467,7 +480,8 @@ class TLSBot {
 
       // await this.browser.takeScreenshot("appointment-page");
 
-      await this.browser.page.waitForTimeout(2000);
+      // await this.browser.page.waitForTimeout(2000);
+      await setTimeout(2000);
 
       // Wait for calendar to load
       if (

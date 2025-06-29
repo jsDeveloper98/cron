@@ -91,6 +91,24 @@ class BrowserManager {
 
       this.page = await this.browser.newPage();
 
+      logger.info(JSON.stringify(this.page));
+
+      logger.info("starting");
+
+      // const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+
+      // await sleep(2000);
+      const { setTimeout } = require("timers/promises");
+
+      await setTimeout(2000);
+
+      // await this.page.waitForNavigation({ timeout: 4000 });
+
+      // this.page.waitForTimeout(2000);
+      logger.info("waiting for timeout");
+
+      // Wait for a short time to ensure the browser is ready
+
       console.log("hasav4772347742");
 
       // Enable JavaScript if it was disabled
