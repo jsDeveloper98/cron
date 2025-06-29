@@ -72,7 +72,7 @@ class BrowserManager {
 
       if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
         puppeteer = require("puppeteer-core");
-        chrome = require("@sparticuz/chromium");
+        chrome = require("@sparticuz/chromium-min");
         const executablePath = await chrome.executablePath(
           "https://github.com/Sparticuz/chromium/releases/download/v133.0.0/chromium-v133.0.0-pack.tar"
         );
